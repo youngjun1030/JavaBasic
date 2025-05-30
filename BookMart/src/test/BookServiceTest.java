@@ -6,20 +6,34 @@ import book.BookVO;
 import book.HYBookService;
 import book.HashMapBookDAO;
 import book.ListBookDAO;
+import book.file.FileBookDB;
+import book.file.TextFileHashMapBookDAO;
 
 public class BookServiceTest {
 
+	
+	static BookDAO bookDAO = new TextFileHashMapBookDAO();
+	static BookService bs = new HYBookService(bookDAO);
+	
+	
 	public static void main(String[] args) {
 		
-		BookService bs = new HYBookService(new ListBookDAO());
+		
 				
 		// 책등록
-		bs.registBook(new BookVO("test", "hyejeong", "kopo", 10000, 10));
-		bs.registBook(new BookVO("test2", "curi", "home", 1000, 5));
-		bs.registBook(new BookVO("test3", "hye", "home", 3000, 15));
+//		bs.registBook(new BookVO("test", "hyejeong", "kopo", 10000, 10));
+//		bs.registBook(new BookVO("test2", "curi", "home", 1000, 5));
+//		bs.registBook(new BookVO("test3", "hye", "home", 3000, 15));
+		
+		((FileBookDB)bookDAO).loadBooks();
+		
+		bs.registBook(new BookVO("test4", "hy", "kopo", 15000, 9));
 		
 		// 책목록
 		System.out.println(bs.listBooks());
+		
+		
+		((FileBookDB) bookDAO).saveBooks();
 		
 		// 책상세정보
 		System.out.println(bs.detailBookInfo(112));

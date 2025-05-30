@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class HashMapMemberDAO implements MemberDAO{
-	private Map<String, MemberVO> memberDB = new HashMap<>();
-	private int memberSeq = 111;
+	protected Map<String, MemberVO> memberDB = new HashMap<>();
+	protected int memberSeq = 111;
 	
 	@Override
 	public boolean insertMember(MemberVO member) {

@@ -6,6 +6,7 @@ public interface BookDAO {
 	boolean insertBook(BookVO book);
 	BookVO selectBook(int bookNo);
 	List<BookVO> selectAllBooks();
-	boolean updateBook(BookVO newBook);
+ 	boolean updateBook(BookVO newBook);
 	boolean deleteBook(int bookNo);
 }
+

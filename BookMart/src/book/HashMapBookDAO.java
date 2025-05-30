@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class HashMapBookDAO implements BookDAO {
 
-	private Map<Integer, BookVO> bookDB = new HashMap<>();
-	private int bookSeq = 111;
+	protected Map<Integer, BookVO> bookDB = new HashMap<>();
+	protected int bookSeq = 111;
 	
 	@Override
 	public boolean insertBook(BookVO book) {

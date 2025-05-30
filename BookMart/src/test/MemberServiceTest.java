@@ -1,11 +1,15 @@
 package test;
 
+import book.HYBookService;
 import member.HYMemberService;
 import member.HashMapMemberDAO;
+import member.MemberDAO;
 import member.MemberService;
 import member.MemberVO;
+import member.file.TextFileHashMapMemberDAO;
 
 public class MemberServiceTest {
+
 	
 	public static void main(String[] args) {
 		MemberService ms = new HYMemberService(new HashMapMemberDAO());
